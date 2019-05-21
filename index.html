@@ -1,87 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="resources/css/login.css">
 
     <title>Document</title>
 </head>
+
 <body>
     <div id="d1">
-        <f:view>
-            
-                
-                <div id="f1">
-                    <div id="d2">
-                        <img src="resources/images/business-loan.jpeg" alt="">
-                        <h:graphicImage 
-                            name="webshop-mobilshop.jpg" 
-                            library="images" 
-                            rendered="true"
-                            height="200" 
-                            width="240"
-                        />                        
-                        <h:outputLabel styleClass="headline">Username</h:outputLabel>
-                        
-                        <h:inputText 
-                            id="loginUsername"
-                            styleClass="inputContent"
-                            value="#{webshopController.loginUsername}"
-                            required="true"
-                            requiredMessage="Please enter username"
-                            binding="#{usernameComponent}"
-                        >
-                        
-                        </h:inputText>
-                        <h:message for="loginUsername" />
-                        
-                        <h:outputLabel styleClass="headline">Password</h:outputLabel>
-                        <h:inputSecret 
-                            id="loginPassword"
-                            value="#{webshopController.loginPassword}"
-                            styleClass="inputContent"
-                            required="#{not empty usernameComponent.value}"
-                            requiredMessage="Please enter password"
-                            
-                        >
-                           <!-- <f:validator validatorId="loginValidator" /> -->
-                            <f:attribute name="usernameValue" value="#{usernameComponent.value}" />
-                        </h:inputSecret>
-                        <h:message for="loginPassword" />
-                        
+        <div>
 
-                        <h:commandButton
-                            styleClass="buttonContent"
-                            id="f1" 
-                            value="Log in"
-                            action="#{webshopController.loginHandler()}"
-                        />
-                        <div id="d3">
-                            <h:commandLink 
-                                styleClass="textButton"
-                                id="f2" 
-                                value="Forgot password?" 
-                                immediate="true"
-                            />
-                            <h:outputLabel 
-                                styleClass="textBullet">•</h:outputLabel>
-                            <h:commandLink 
-                                styleClass="textButton"
-                                id="f3"
-                                value="Create an account"
-                                action="createAccount"
-                                immediate="true"
-                            />
-                        </div>
+
+            <form id="f1">
+                <div id="d2">
+                    <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+
+                    <p class="headline">Username</p>
+
+                    <input type="text" name="Username" placeholder="Name" id="loginUsername"
+                        class="inputContent">
+
+                    </h:inputText>
+                    <!--<h:message for="loginUsername" />-->
+
+                    <p class="headline">Password</p>
+                    <input type="password" name="Password" placeholder="Name" id="loginPassword"
+                        class="inputContent">
+
+                    <!--<h:message for="loginPassword" /> -->
+                    <button type=submit id="f1" class="buttonContent">Submit</button>
+
+                    <div id="d3">
+                        <a href="#" class="textButton" id="f2">Forgot password?</a>
+                        <span class="textBullet">•</span>
+                        <a href="#" class="textButton" id="f3">Create an account</a>                        
                     </div>
                 </div>
-                
-           
-           
-        </f:view>
-            
+            </form>
+
+
+
         </div>
+
+    </div>
+    <script src="resources/scripts/"></script>
 </body>
+
 </html>
