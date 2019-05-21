@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="register.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="server.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">
+        <f:view>
+
+            <div id="d3">
+                <img id="imgReg" src="resources/images/icon-register-800x600.jpeg" height="400" width="500">
+
+                <h1 id="h1">Become a customer</h1>
+
+                <div class="row">
+                    <form class="col s12" id="regForm">
+                      <div class="row">
+                        <div class="input-field col s6">
+                            <input id="first-name" type="text" class="validate">
+                            <label for="first-name">First Name</label>
+                          </div>
+                        <div class="input-field col s6">
+                          <input id="last-name" type="text" class="validate">
+                          <label for="last-name">Last Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate">
+                            <label for="email">Email</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input id="address" type="text" class="validate">
+                            <label for="address">Address</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="text" class="validate">
+                            <label for="password">Password</label>
+                          </div>
+                        </div>
+                        <div class="center">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                  </div>
+                
+            </div>
+            
+        </f:view>
+    </div>
+</body>
