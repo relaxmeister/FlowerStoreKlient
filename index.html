@@ -17,7 +17,7 @@
         <div>
 
 
-            <form id="f1" onsubmit="return login();">
+            
                 <div id="d2">
                     <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
                     
@@ -33,7 +33,7 @@
                         class="inputContent">
 
                     <!--<h:message for="loginPassword" /> -->
-                    <button type=submit id="b1" class="buttonContent">Submit</button>
+                    <button id="b1" class="buttonContent" onclick="login()">Submit</button>
 
                     <div id="d3">
                         <a href="#" class="textButton" id="f2">Forgot password?</a>
@@ -41,7 +41,6 @@
                         <a href="createAccount.html" class="textButton" id="f3">Create an account</a>
                     </div>
                 </div>
-            </form>
 
 
 
@@ -50,16 +49,7 @@
     </div>
     <script>
 
-        //Detta gör att vi efter submitklick går igenom först metodens utskrift, ignorerar bytsida tyvärr
-        //men genom denna funktion byts sedan sidan
-        // wait for the DOM to be loaded 
-        $(document).ready(function () {
-            //login();
-            // bind 'f1' form and provide a simple callback function 
-            $('#f1').ajaxForm(function () {
-                window.location = "http://127.0.0.1:5500/webshopPage.html#"
-            });
-        }); 
+       
     </script>
     <script src="resources/scripts/login.js"></script>
 </body>
