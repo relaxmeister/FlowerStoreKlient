@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/css/checkout.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="pageContent">
+
+            <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+            <div id="logoutContainer">
+                <div class="leftNavContainer">
+                    <a class="navtext" href="#{webshopController.goToProducts()}">Klockor</a>
+                    <span style="margin-right: 10%; font-size: 13px; font-weight: bold">></span>
+                    <a class="navtext" href="#">Checkout</a>
+                </div>
+                <!--
+                <div class="rightNavContainer">                    
+                    <h:form>
+                        <h:commandLink class="navtext" action="#{webshopController.logOut()}" value="Log out">
+                            <f:param name="pageId" value="1" />
+                        </h:commandLink>
+                        <h:outputLabel class="usernavtext" value=" #{webshopController.loginUsername}"
+                            style="font-weight: bold">
+                        </h:outputLabel>
+                    </h:form>
+                </div>-->
+            </div>
+            <div id="header">
+                <div class="sidekick"></div>
+                <h4>Din varukorg</h4>
+                <div class="sidekick"></div>
+            </div>
+
+            <h:form class="content"
+                style="#{webshopController.shoppingCart.size() == 0 ? 'display:none' : 'display:block'}">
+                <ui:repeat value="#{webshopController.shoppingCart}" var="watch">
+                    <div class="product">
+                        <div class="part1">
+
+                            <h:commandLink class="imgLink" action="#{webshopController.takeMeToProductInfo()}"
+                                title="#{watch.name}">
+                                <h:graphicImage name="#{watch.image}.jpg" library="images" rendered="true" />
+                                <f:setPropertyActionListener target="#{webshopController.watch}" value="#{watch}" />
+                            </h:commandLink>
+
+
+
+                        </div>
+                        <div class="part2">
+                            <h:commandLink class="textLink" action="#{webshopController.takeMeToProductInfo()}"
+                                title="#{watch.name}">
+                                <h:outputText value="#{watch.name}" class="productName" />
+                                <f:setPropertyActionListener target="#{webshopController.watch}" value="#{watch}" />
+                            </h:commandLink>
+                            <h:outputText value="Artikelnummer: #{watch.model}" class="productModel" />
+                            <div class="part3">
+
+                                <h:outputText value="#{watch.price}" class="productPrice">
+                                    <f:convertNumber pattern="#0.00" />
+                                </h:outputText>
+                                <h:outputText value="kr/st" class="priceCurrency" />
+
+                                <h:inputText value="1"
+                                    style="#{'width: 20px; margin-left:8px; margin-right:8px; font-size:11px;'}" />
+                                <h:outputText value="#{watch.price}" class="productPrice">
+                                    <f:convertNumber pattern="#0.00" />
+                                </h:outputText>
+
+                                <h:outputText value="kr" class="priceCurrency" />
+                            </div>
+                        </div>
+                        <div class="part4">
+                            <h:commandLink action="#{webshopController.removeFromCart()}" title="Ta bort">
+                                <h:graphicImage name="images/trash.png" />
+                                <f:setPropertyActionListener target="#{webshopController.watch}" value="#{watch}" />
+                            </h:commandLink>
+                        </div>
+                    </div>
+                </ui:repeat>
+                <div class="rounding"
+                    style="#{webshopController.rounding.compareTo(webshopController.rounding2) == 0 ? 'display:none' : 'display:flex'}">
+                    <div class="roundPart1">
+                        <h:outputText class="moms" value="Öresavrundning" />
+                    </div>
+                    <div class="roundPart2">
+                        <h:outputText class="moms" value="#{webshopController.rounding}" />
+                    </div>
+                </div>
+                <div id="totalPrice">
+                    <div class="wrapperPart1">
+                        <div>
+                            <h:outputText class="moms" value="Moms ingår med " />
+                            <h:outputText class="momsSvar" value="#{webshopController.moms}">
+                                <f:convertNumber pattern="#0.00" />
+                            </h:outputText>
+                            <h:outputText class="momsSvar" value=" kr" />
+                        </div>
+                        <div>
+                            <h:outputText class="totalHeadline" value="Totalsumma" />
+                        </div>
+                    </div>
+                    <div class="wrapperPart2">
+                        <h:outputText class="totalPrice" value="#{webshopController.getFormatedTotalPrice()} kr" />
+                    </div>
+                </div>
+                <h:commandButton class="placeOrder" value="Order" action="payment.xhtml"></h:commandButton>
+            </h:form>
+
+            <div class="content"
+                style="#{webshopController.shoppingCart.size() != 0 ? 'display:none' : 'display:block'}">
+                <p class="emptyCart">Varukorgen är tom</p>
+            </div>
+        </div>
+    </div>
+    <script src="resources/scripts/webshopPage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/css/webshopPage.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="pageContent">
+            <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+            <div id="logoutContainer">
+                <div class="leftNavContainer">
+                    <a class="navtext" href="#">Blommor</a>
+                </div>
+                <div class="rightNavContainer">
+                    <a href="checkout.html" id="cart">
+                        <img src="resources/images/shopping-cart.png" height=18 width=18 alt="ShoppingCart">                        
+                    </a>
+                    <!--<h:outputLabel id="itemCount" value="(#{webshopController.shoppingCart.size()})">
+
+                    </h:outputLabel>-->
+                    <!--
+                    <h:form>
+                        <h:commandLink class="navtext" action="#{webshopController.logOut()}" value="Log out">
+                            <f:param name="pageId" value="1" />
+                        </h:commandLink>
+                        <h:outputLabel class="usernavtext" value=" #{webshopController.loginUsername}"
+                            style="font-weight: bold">
+                        </h:outputLabel>
+                    </h:form>-->
+
+
+
+                </div>
+            </div>
+
+            <div id="header">
+                <div class="sidekick"></div>
+                <h4>Products for sale</h4>
+                <div class="sidekick"></div>
+            </div>
+            <ul id=content></ul>
+            
+            <!--
+            <h:form id="searchBar">
+                <h:inputText id="search" class="search" pt:placeholder="Sök produkter"
+                    value="#{webshopController.searchString}">
+                </h:inputText>
+                <h:commandButton class="searchButton" value="Search" action="#{webshopController.search()}">
+                    <f:ajax execute="search" render="content"></f:ajax>
+                </h:commandButton>
+            </h:form>
+            <h:form id="content">
+                <ui:repeat value="#{webshopController.searchResult}" var="watch">
+                    <div class="product">
+                        <h:commandLink action="#{webshopController.takeMeToProductInfo()}" class="productImg">
+                            <h:graphicImage name="#{watch.image}.jpg" library="images" rendered="true" width="100%"
+                                height="240" />
+                            <f:setPropertyActionListener target="#{webshopController.watch}" value="#{watch}" />
+                        </h:commandLink>
+                        <h:outputText value="#{watch.name}" class="productName" />
+                        <h:outputText value="#{watch.model}" class="productModel" />
+                        <div>
+                            <h:outputText value="#{watch.price}" class="productPrice">
+                                <f:convertNumber pattern="#0" />
+                            </h:outputText>
+                            <h:outputText value=" kr" class="productPrice" />
+                        </div>
+                        <h:commandButton styleClass="addToCart" value="Add to Cart"
+                            action="#{webshopController.addToCart()}">
+                            <f:setPropertyActionListener target="#{webshopController.watch}" value="#{watch}" />
+                        </h:commandButton>
+                    </div>
+                </ui:repeat>
+                <div class="searchResult"
+                    style="#{webshopController.searchResult.size() != 0 ? 'display:none' : 'display:flex'}">
+                    <h4>INGA MATCHANDE ARTIKLAR</h4>
+                    <p class="noProductText">Din sökning <b>"#{webshopController.searchString}"</b> gav inga träffar</p>
+                    <p class="noProductText">Kontrollera stavningen eller försök igen med ett mindre specifikt sökord
+                    </p>
+                </div>
+
+            </h:form>
+            -->
+
+
+        </div>
+    </div>
+    <script src="resources/scripts/webshopPage.js"></script>
+</body>
+
+</html>
