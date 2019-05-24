@@ -8,8 +8,8 @@ var testFlower = {
 var flower = JSON.parse(localStorage.getItem("Kurt"));
 console.log(JSON.parse(localStorage.getItem("Kurt")));
 
-//var shoppingCart = [];
-var shoppingCart = JSON.parse(localStorage.getItem("Cart"));
+var shoppingCart = [];
+//var shoppingCart = JSON.parse(localStorage.getItem("Cart"));
 
 
 function login(){
