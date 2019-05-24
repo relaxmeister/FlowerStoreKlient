@@ -17,6 +17,9 @@ function login2()
 }
 
 function login(){
+    //localStorage.removeItem('Cart');
+    localStorage.clear();
+
     const email = document.getElementById("loginUsername").value;
     const pass = document.getElementById("loginPassword").value;
     console.log(pass + email);
@@ -29,8 +32,8 @@ function login(){
       }).then((resp) => resp.json())
         .then(jsonData => {
             if(jsonData !== undefined){
-                window.location.href = "http://localhost:5500/webshopPage.html";
-                console.log(jsonData.firstName);
+                window.location.href = "/webshopPage.html";
+                localStorage.setItem("customerId", jsonData.id);
             }
         }).catch(error => {
             getAdmin(email, pass);

@@ -38,8 +38,7 @@
                 <div class="sidekick"></div>
             </div>
 
-            <form class="content" id="cart5">
-
+            <div class="content" id="cart5">
                 <div class="rounding">
                     <div class="roundPart1">
                         <span class="moms" value="Öresavrundning"></span>
@@ -65,9 +64,9 @@
                         <span class="totalPrice" value="#{webshopController.getFormatedTotalPrice()} kr">
                     </div>
                 </div>
-                <button class="placeOrder" value="Order" action=""></button>
+                <button class="placeOrder" onclick="placeOrder()">Order</button>
 
-            </form>
+            </div>
             <!--
             <h:form class="content"
                 style="#{webshopController.shoppingCart.size() == 0 ? 'display:none' : 'display:block'}">

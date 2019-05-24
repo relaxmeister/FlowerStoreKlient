@@ -19,17 +19,8 @@ function sec() {
     
     
     console.log("second");
-}
 
-var cart = [];
-cart = JSON.parse(localStorage.getItem("Cart"));
-console.log(cart);
-console.log(typeof(JSON.parse(localStorage.getItem("Cart"))))
-cart.forEach((e) => { console.log("lul")})
-
-//localStorage.setItem('Cart', JSON.stringify(shoppingCart));
-
-cart.forEach((flower) => {
+    cart.forEach((flower) => {
     //content.append(`<div></div>`); //failar på elementen
     //$('#content').append(`<div>${flower.Name}</div>`); funkade inte alls? wtf
 
@@ -47,6 +38,18 @@ cart.forEach((flower) => {
     //pris
 
 });
+}
+
+var cart = [];
+cart = JSON.parse(localStorage.getItem("Cart"));
+console.log(cart);
+console.log(typeof(JSON.parse(localStorage.getItem("Cart"))))
+cart.forEach((e) => { console.log("lul")})
+
+//localStorage.setItem('Cart', JSON.stringify(shoppingCart));
+
+
+
 
 function removeItem()
 {
@@ -56,3 +59,33 @@ function findFlowerById(flowerId){
     return cart.filter(e => {
          return e.id === flowerId })[0];
  }
+
+ function placeOrder(){
+     
+     const sendOrderTest = {
+        customerId: localStorage.getItem("customerId"),
+        restOrderDetails: [] 
+    }
+    cart.forEach(e => {
+        sendOrderTest.restOrderDetails.push({flowerId: e.id, quantity: 1})
+    })
+    
+    //console.log("SendorderTest: " + JSON.stringify(sendOrderTest));
+    postData(sendOrderTest);
+     cart = null;
+     localStorage.setItem('Cart', JSON.stringify([]));
+     window.location.href = "/webshopPage.html";
+     
+ }
+
+
+ async function postData(data) {
+    return fetch('http://localhost:8080/order/createOrder', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+    }).then((resp) => console.log(resp));
+}
