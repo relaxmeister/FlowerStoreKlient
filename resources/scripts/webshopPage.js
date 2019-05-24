@@ -42,7 +42,7 @@ function log(flowerId)
     currentFlower = findFlowerById(flowerId);
 
     console.log(currentFlower);
-    localStorage.setItem('Kurt', currentFlower);
+    localStorage.setItem('Kurt', JSON.stringify(currentFlower));
     window.location.href = "http://127.0.0.1:5500/productInfo.html"
     
 }
