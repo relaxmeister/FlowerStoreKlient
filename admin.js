@@ -33,10 +33,12 @@ async function getAllUsers(){
 
 function setCurrentCustomer(customerId){
     const customer = findCustomerById(customerId);
+    document.getElementById("customer-modal-order").innerHTML = "";
     console.log(customer);
-    document.getElementById("customer-modal-order").innerHTML = "Ordrar för " + customer.firstName + " " + customer.lastName + " ORDERS: "
-    + customer.orders.for;
-
+    document.getElementById("customer-modal-order").innerHTML += "Ordrar för " + customer.firstName + " " + customer.lastName;
+    customer.orders.forEach(e => {
+        document.getElementById("customer-modal-order").innerHTML +=  "<br> <br> Datum: " +  e.orderDate + " Totalt pris: " + e.totalPrice;
+    });
 }
 
 function showCustomerInfo(customerInfo){

@@ -46,7 +46,7 @@ function getAdmin(email, pass){
       }).then((resp) => resp.json())
         .then(jsonData => {
             if(jsonData !== undefined){
-                window.location.href = "http://localhost:5500/checkout.html";
+                window.location.href = "http://localhost:5500/adminpage.html";
                 console.log(jsonData.firstName);
             }
         }).catch(error => {
