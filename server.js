@@ -30,9 +30,11 @@ $(document).ready(function() {
             async: true, 
             success: function(responseData, textStatus, jqXHR) {
                 var value = responseData.someKey;
+                alert("Användare skapad, du skickas nu tillbaka till startsidan");
+                window.location.href = "http://127.0.0.1:5500/index.html";
             },
             error: function (responseData, textStatus, errorThrown) {
-                alert('POST failed.');
+                alert('Alla fält är inte korrekt ifyllda');
             }
         });
 
