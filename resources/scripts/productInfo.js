@@ -10,6 +10,10 @@ console.log(JSON.parse(localStorage.getItem("Kurt")));
 
 var shoppingCart = [];
 //var shoppingCart = JSON.parse(localStorage.getItem("Cart"));
+if (localStorage.getItem("Cart") !== null) 
+{
+    shoppingCart = JSON.parse(localStorage.getItem("Cart"));
+}
 
 
 function login(){
