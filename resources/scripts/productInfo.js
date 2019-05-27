@@ -20,11 +20,13 @@ function login(){
     console.log("LOGINKLICK!")
 };
 
-content.innerHTML += "<div class='product'><span class'productName'>" +`${flower.name}`+ 
+content.innerHTML += "<div class='product'><span class='productName'>" +`${flower.name}`+ 
 "</span><div class='productImg'><img src='resources/images/" + `${flower.pictureUrl}` +
 "'height=240 width='100%' alt='Bild på en blomma' title='" + 
 `${flower.name}` + "'></div><div><span class='productPrice'>"+ `${flower.price}`+ ' kr' +
 "</span></div></div>";
+
+document.getElementById('copyContent').innerHTML += "<div class='description'><span>" + `${flower.description}` + "</span></div>"
 
 function addToCart(){
     shoppingCart.push(flower);
