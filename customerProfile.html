@@ -4,27 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="register.css">
-    <script src="server.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
-
+    <script src="server.js"></script>
     <title>Document</title>
 </head>
 <body>
+    <div id="d3">
+        <img src="resources/images/order-history.svg" height="400" width="400">
+        <h1 id="h1">Name</h1>
 
-    <button>
+        <ul id="orderList">
 
-    </button>
+            <ul id="flowerList">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-            const url='https://jsonplaceholder.typicode.com/posts';
-            const data={name:"Said", id:23 }
-            $('.btn').click(function()
-                {$.post(url, data, function(data, status){
-                console.log('${data} and status is ${status}')});})
-        </script>
+            </ul>
+
+        </ul>
+
+    </div>
 </body>
