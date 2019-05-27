@@ -16,7 +16,7 @@
             <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
             <div id="logoutContainer">
                 <div class="leftNavContainer">
-                    <a class="navtext" href="#{webshopController.goToProducts()}">Klockor</a>
+                    <a class="navtext" href="webshopPage.html">Klockor</a>
                     <span style="margin-right: 10%; font-size: 13px; font-weight: bold">></span>
                     <a class="navtext" href="#">Checkout</a>
                 </div>
@@ -38,6 +38,36 @@
                 <div class="sidekick"></div>
             </div>
 
+            <div class="content" id="cart5">
+                <div class="rounding">
+                    <div class="roundPart1">
+                        <span class="moms" value="Öresavrundning"></span>
+                    </div>
+                    <div class="roundPart2">
+                        <span class="moms"></span>
+                    </div>
+                </div>
+                <div id="totalPrice">
+                    <div class="wrapperPart1">
+                        <div>
+                            <span class="moms" value="Moms ingår med "></span>
+                            <span class="momsSvar" value="">
+
+                            </span>
+                            <span class="momsSvar" value=" kr"></span>
+                        </div>
+                        <div>
+                            <span class="totalHeadline" value="Totalsumma"></span>
+                        </div>
+                    </div>
+                    <div class="wrapperPart2">
+                        <span class="totalPrice" value="#{webshopController.getFormatedTotalPrice()} kr">
+                    </div>
+                </div>
+                <button class="placeOrder" onclick="placeOrder()">Order</button>
+
+            </div>
+            <!--
             <h:form class="content"
                 style="#{webshopController.shoppingCart.size() == 0 ? 'display:none' : 'display:block'}">
                 <ui:repeat value="#{webshopController.shoppingCart}" var="watch">
@@ -112,14 +142,15 @@
                 </div>
                 <h:commandButton class="placeOrder" value="Order" action="payment.xhtml"></h:commandButton>
             </h:form>
-
-            <div class="content"
-                style="#{webshopController.shoppingCart.size() != 0 ? 'display:none' : 'display:block'}">
+            
+            <div class="content">
                 <p class="emptyCart">Varukorgen är tom</p>
             </div>
-        </div>
+            -->
     </div>
-    <script src="resources/scripts/webshopPage.js"></script>
+    </div>
+    <!--<script src="resources/scripts/webshopPage.js"></script>-->
+    <script src="resources/scripts/checkout.js"></script>
 </body>
 
 </html>

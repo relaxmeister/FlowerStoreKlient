@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resources/css/productinfo.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="pageContent">
+
+
+
+
+            <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+            <div id="logoutContainer">
+                <div class="leftNavContainer">
+                    <a class="navtext" href="webshopPage.html">Blommor</a>
+                    <span style="margin-right: 10%; font-size: 13px; font-weight: bold"></span>
+                    <a class="navtext" href="#">Blominfo</a>
+                </div>
+                <div class="rightNavContainer">
+                    <a href="checkout.html" id="cart">
+                        <img src="resources/images/shopping-cart.png" height=18 width=18 alt="ShoppingCart">
+                    </a>
+                    <!--
+                
+                    <h:outputLabel id="itemCount" value="(#{webshopController.shoppingCart.size()})"></h:outputLabel>
+                    <h:form>
+                        <h:commandLink class="navtext" action="#{webshopController.logOut()}" value="Log out">
+                            <f:param name="pageId" value="1" />
+                        </h:commandLink>
+                        <h:outputLabel class="usernavtext" value=" #{webshopController.loginUsername}"
+                            style="font-weight: bold">
+                        </h:outputLabel>
+                    </h:form>
+                -->
+                </div>
+            </div>
+            <div id="header">
+                <div class="sidekick"></div>
+                <h4>ProductsInfo</h4>
+                <div class="sidekick"></div>
+            </div>
+            <form id="content">
+
+            </form>
+            <div class="copyContent">
+                <button class="addToCart" onclick="addToCart()">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="resources/scripts/productInfo.js"></script>
+</body>
+
+</html>
