@@ -17,7 +17,7 @@ $(document).ready(function() {
             console.log(data);
 
         $.ajax({
-            url: '/kopiera url',
+            url: '/kopiera url hit',
             type: 'POST',
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
