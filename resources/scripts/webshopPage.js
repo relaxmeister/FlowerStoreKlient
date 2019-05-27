@@ -5,7 +5,7 @@ var names = ['Alocasia', 'Charmfull Orkide', 'Eukalyptus', 'Grön skönhet', 'Hi
     'Hortensia', 'Kryddigt gott'];
 var price = [100, 200, 30, 49, 52, 666, 777];
 var images = ['Alocasia.jpg', 'CharmfullOrkide.jpg', 'Eukalyptus.jpg', 'GronSkonhet.jpg', 'HimmelskHortensia.jpg',
-    'Hortensia.jpg', 'KryddigtGott.jpg']
+    'Hortensia.jpg', 'KryddigtGott.jpg'];
 const content = document.getElementById('content');
 const cartDisplay = document.getElementById('cart5');
 var shoppingcart = [];
@@ -78,25 +78,38 @@ function init() {
     });
     return flowers;
 }
-/*
-$('#content').on('click', 'li', function () {
-    // Get the clicked person's information
-    var flower = flowers[$(this).data('index')];
 
+function search(){
+    let tempArray = [];
+    let search = document.getElementById('searchInput').value;
+    
+    console.log(search);
+    console.log("heuhue");
 
-    // Set info in the corresponding elements
-    //$('.productName').html(flower.Name);
-    console.log(flower.Name);
-});*/
-/*
-$('#content').on('click', 'li', function () {
+    realFlowers.forEach((e) => {
+        if (e.name.toUpperCase().includes(search.toUpperCase())) {
+            tempArray.push(e);
+        }
+    })
+    //realFlowers = tempArray;
+    console.log(realFlowers);
+    console.log(tempArray);
+    //
+    content.innerHTML = "";
+    tempArray.forEach((floower) => {
+        content.innerHTML += "<li onclick='log("+`${floower.id}`+")' class='product'><img src='resources/images/" + `${floower.pictureUrl}` +
+            "'height=240 width='100%' alt='Bild på en blomma' title='" + `${floower.name}` + "'><p class='productName'>" + `${floower.name}` +
+            "</p><p class='productPrice'>" + `${floower.price}` + ' kr' + "</p></li>";
+    });
 
-    alert(flowers[$(this).index()].Name)
-});
+    if (tempArray.length == 0)
+    {
+        content.innerHTML = "<div class='searchResult'><h4>INGA MATCHANDE ARTIKLAR</h4><p class='noProductText'>Din sökning <b>" + 
+        `"${search}"` + "</b> gav inga träffar</p><p class='noProductText'>Kontrollera stavningen eller försök med ett mindre specifikt sökord</p></div>"
+        console.log("tomt");
+    }
 
-document.getElementById("content").addEventListener("click", "li", someFunction);
+    //TODO
+}
 
-function someFunction(event) {
-  console.log(event.target.class);
-}*/
 getAllFlowers();

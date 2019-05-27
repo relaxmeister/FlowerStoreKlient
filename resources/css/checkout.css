@@ -76,7 +76,7 @@ body {
 }
 .sidekick {
     width: 35%;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1.5px solid lightgrey;
 }
 
 .content {
@@ -155,6 +155,8 @@ body {
 .part2 .textLink {
     text-decoration: none;
     color: black;
+    align-self: center;
+    padding-bottom: 15px;
 }
 .part2 .textLink:hover {
     text-decoration: underline;
@@ -179,9 +181,15 @@ body {
     width: 17%;
     text-decoration: none;
 }
+/*
 .product .part4 img {
     width: 20px;
     height: 20px;
+}*/
+.product .part4 .remove {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 .product .part4 a {
     width: 20px;
@@ -197,8 +205,8 @@ body {
     
     width: 100%;
 }
-.rounding {
-    display: flex;
+#rounding {
+    display: none;
     flex-direction: row;
     justify-content: flex-start;
     width:100%;   
@@ -240,7 +248,9 @@ body {
 .moms {
     font-size: 11px;
     
-    
+}
+.avrundningSvar {
+    font-size: 11px;
 }
 .momsSvar {
     font-size: 11px;

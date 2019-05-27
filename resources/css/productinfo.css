@@ -91,7 +91,7 @@ body {
 }
 .sidekick {
     width: 35%;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1.5px solid lightgrey;
 }
 #content {
     display: flex;

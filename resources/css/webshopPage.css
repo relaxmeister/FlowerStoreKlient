@@ -1,8 +1,9 @@
+/*
 *,*::after,*::before {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
+}*/
 
 body {
     font-family: 'Gugi', serif;
@@ -96,13 +97,13 @@ body {
 }
 .sidekick {
     width: 35%;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1.5px solid lightgrey;
 }
 
 #searchBar {
     width: 100%;
     display: flex;
-    border: 1px solid black;
+    
 }
 
 .search {
@@ -110,6 +111,7 @@ body {
     margin: 0%;
     border: none;
     padding-left: 5px;
+    border: 1px solid black;
 }
 
 .searchButton {
@@ -128,6 +130,7 @@ body {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    padding: 0;
 }
 
 .product {
@@ -158,6 +161,8 @@ body {
 .productName {
     font-size: 11px;
     display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .productModel {
@@ -166,6 +171,7 @@ body {
 }
 
 .productPrice {
+    margin-top: 5px;
     font-size: 18px;
     color: darkred;
     
@@ -208,7 +214,11 @@ body {
     align-items: center;
     width: 100%;
     text-align: center;
+    margin-top: 12px;
 
+}
+.searchResult h4 {
+    margin-bottom: 20px;
 }
 .noProductText {
     margin: 0;

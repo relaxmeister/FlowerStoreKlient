@@ -12,19 +12,21 @@
 <body>
     <div id="container">
         <div id="pageContent">
-            <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+            <img src="resources/images/blombanner.jpg" height=200 width=240 alt="Bild på en blomma">
             <div id="logoutContainer">
                 <div class="leftNavContainer">
                     <a class="navtext" href="#">Blommor</a>
                 </div>
                 <div class="rightNavContainer">
                     <a href="checkout.html" id="cart">
-                        <img src="resources/images/shopping-cart.png" height=18 width=18 alt="ShoppingCart">                        
+                        <img src="resources/images/shopping-cart.png" height=18 width=18 alt="ShoppingCart">
                     </a>
+                    <a class="navtext" href="index.html">Log out</a>
                     <!--<h:outputLabel id="itemCount" value="(#{webshopController.shoppingCart.size()})">
 
                     </h:outputLabel>-->
                     <!--
+                        
                     <h:form>
                         <h:commandLink class="navtext" action="#{webshopController.logOut()}" value="Log out">
                             <f:param name="pageId" value="1" />
@@ -44,8 +46,12 @@
                 <h4>Products for sale</h4>
                 <div class="sidekick"></div>
             </div>
+            <div id="searchBar">
+                <input type="text" name="Search" placeholder="Sök efter blomma" id="searchInput" class="search">
+                <button class="searchButton" onclick="search()">Search</button>
+            </div>
             <ul id=content></ul>
-            
+
             <!--
             <h:form id="searchBar">
                 <h:inputText id="search" class="search" pt:placeholder="Sök produkter"

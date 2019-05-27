@@ -13,24 +13,22 @@
     <div id="container">
         <div id="pageContent">
 
-            <img src="resources/images/business-loan.jpeg" height=200 width=240 alt="Bild på en blomma">
+            <img src="resources/images/blombanner.jpg" height=200 width=240 alt="Bild på en blomma">
             <div id="logoutContainer">
                 <div class="leftNavContainer">
                     <a class="navtext" href="webshopPage.html">Klockor</a>
                     <span style="margin-right: 10%; font-size: 13px; font-weight: bold">></span>
                     <a class="navtext" href="#">Checkout</a>
                 </div>
-                <!--
-                <div class="rightNavContainer">                    
-                    <h:form>
-                        <h:commandLink class="navtext" action="#{webshopController.logOut()}" value="Log out">
-                            <f:param name="pageId" value="1" />
-                        </h:commandLink>
-                        <h:outputLabel class="usernavtext" value=" #{webshopController.loginUsername}"
-                            style="font-weight: bold">
-                        </h:outputLabel>
-                    </h:form>
-                </div>-->
+
+                <div class="rightNavContainer">
+
+                    <a class="navtext" href="index.html">Log out</a>
+
+                    <!--<a class="navtext" href="webshopPage.html" class="usernavtext">Username </a>-->
+
+
+                </div>
             </div>
             <div id="header">
                 <div class="sidekick"></div>
@@ -39,33 +37,33 @@
             </div>
 
             <div class="content" id="cart5">
-                <div class="rounding">
+
+
+            </div>
+            <div class="content" id="leftovers">
+                <div id="rounding">
                     <div class="roundPart1">
-                        <span class="moms" value="Öresavrundning"></span>
+                        <span class="moms" >Öresavrundning</span>
                     </div>
                     <div class="roundPart2">
-                        <span class="moms"></span>
+                        <span class="avrundningSvar"></span>
                     </div>
                 </div>
                 <div id="totalPrice">
                     <div class="wrapperPart1">
                         <div>
-                            <span class="moms" value="Moms ingår med "></span>
-                            <span class="momsSvar" value="">
-
-                            </span>
-                            <span class="momsSvar" value=" kr"></span>
+                            <span class="moms">Moms ingår med </span>
+                            <span class="momsSvar" value="calcMoms kr"></span>
                         </div>
                         <div>
-                            <span class="totalHeadline" value="Totalsumma"></span>
+                            <span class="totalHeadline" value="Totalsumma">Totalsumma</span>
                         </div>
                     </div>
                     <div class="wrapperPart2">
-                        <span class="totalPrice" value="#{webshopController.getFormatedTotalPrice()} kr">
+                        <span class="totalPrice">
                     </div>
                 </div>
                 <button class="placeOrder" onclick="placeOrder()">Order</button>
-
             </div>
             <!--
             <h:form class="content"
@@ -147,7 +145,7 @@
                 <p class="emptyCart">Varukorgen är tom</p>
             </div>
             -->
-    </div>
+        </div>
     </div>
     <!--<script src="resources/scripts/webshopPage.js"></script>-->
     <script src="resources/scripts/checkout.js"></script>

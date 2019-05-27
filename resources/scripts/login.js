@@ -19,6 +19,7 @@ function login2()
 function login(){
     //localStorage.removeItem('Cart');
     localStorage.clear();
+    var shoppingCart = [];
 
     const email = document.getElementById("loginUsername").value;
     const pass = document.getElementById("loginPassword").value;
@@ -32,6 +33,7 @@ function login(){
       }).then((resp) => resp.json())
         .then(jsonData => {
             if(jsonData !== undefined){
+                localStorage.setItem('Cart', JSON.stringify(shoppingCart));
                 window.location.href = "/webshopPage.html";
                 localStorage.setItem("customerId", jsonData.id);
             }
