@@ -130,8 +130,6 @@ function placeOrder() {
     postData(sendOrderTest);
     cart = null;
     localStorage.setItem('Cart', JSON.stringify([]));
-    window.location.href = "/webshopPage.html";
-
 }
 
 
@@ -143,6 +141,11 @@ async function postData(data) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data), // body data type must match "Content-Type" header
-    }).then((resp) => console.log(resp) + " test");
+    }).then((resp) => resp.json())
+    .then(jsonData => {
+        localStorage.setItem("customerPremium", jsonData.premium);
+        window.location.href = "/webshopPage.html";
+        
+    });
 }
 
