@@ -36,6 +36,7 @@ function login(){
                 localStorage.setItem('Cart', JSON.stringify(shoppingCart));
                 window.location.href = "/webshopPage.html";
                 localStorage.setItem("customerId", jsonData.id);
+                localStorage.setItem("customerPremium", jsonData.premium);
             }
         }).catch(error => {
             getAdmin(email, pass);

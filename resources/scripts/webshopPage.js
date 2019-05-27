@@ -11,21 +11,34 @@ const cartDisplay = document.getElementById('cart5');
 var shoppingcart = [];
 
 var currentFlower;
-
-
+const premium = localStorage.getItem("customerPremium");
+console.log(premium);   
 
 function getAllFlowers(){
-    fetch("http://localhost:8080/flower/getAllFlowers", {
-          mode: 'cors',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-      }).then((resp) => resp.json())
-        .then(jsonData => {
-            realFlowers = jsonData;
-            init();
-        });
-}
+    if(premium){
+        fetch("http://localhost:8080/flower/getAllPremiumFlowers", {
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then((resp) => resp.json())
+            .then(jsonData => {
+                realFlowers = jsonData;
+                init();
+            });
+        }
+        else{
+            fetch("http://localhost:8080/flower/getAllFlowers", {
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }).then((resp) => resp.json())
+                .then(jsonData => {
+                    realFlowers = jsonData;
+                    init();
+                });
+        }
 
 
 
