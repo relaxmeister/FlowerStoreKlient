@@ -39,15 +39,12 @@ console.log(cart);
 
 cart.forEach((e) => { console.log("lul") })
 
-
-
-//localStorage.setItem('Cart', JSON.stringify(shoppingCart));
-
 var totalPrice = 0;
 var rounding = 0;
 
 function calcPrice() {
     totalPrice = 0;
+    //totalPrice += 0.7; // manually test avrundning
     cart.forEach((e) => {
         totalPrice += e.price;
         console.log("pris: " + e.price);
@@ -57,11 +54,6 @@ function calcPrice() {
     avCheck();
 }
 
-
-
-//var rounding2 = 0;
-totalPrice += 0.2; //manually test avrundning
-//console.log("totalprice: " + totalPrice)
 function avCheck() {
     if ((totalPrice % 1) != 0) //det krävs att det inte är jämnt för att komma in
     {
@@ -69,8 +61,7 @@ function avCheck() {
         let totalPriceWODec = 0;
 
         totalPriceWODec = Math.round(totalPrice);
-        console.log("totalPriceWODec: " + totalPriceWODec)
-        //BigDecimal roundBigDec = new BigDecimal(totalPrice);
+        console.log("totalPriceWODec: " + totalPriceWODec);
 
         if (totalPrice > totalPriceWODec) { //greater than
             rounding = totalPriceWODec - totalPrice;

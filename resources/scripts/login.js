@@ -33,8 +33,9 @@ function login(){
       }).then((resp) => resp.json())
         .then(jsonData => {
             if(jsonData !== undefined){
-                localStorage.setItem('Cart', JSON.stringify(shoppingCart));
+                localStorage.setItem('Cart', JSON.stringify(shoppingCart)); // carten måste initieras
                 window.location.href = "/webshopPage.html";
+                //console.log(jsonData.) kolla om premium
                 localStorage.setItem("customerId", jsonData.id);
             }
         }).catch(error => {
